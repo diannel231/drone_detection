@@ -1,0 +1,50 @@
+id: OFDM_Estimator_OFDM_Estimator
+label: OFDM_Estimator
+category: '[OFDM_Estimator]'
+
+templates:
+  imports: from gnuradio import OFDM_Estimator
+  make: OFDM_Estimator.OFDM_Estimator(${samp_rate}, ${signal}, ${min_items}, ${alpha}, ${beta})
+
+#  Make one 'parameters' list entry for every parameter you want settable from the GUI.
+#     Keys include:
+#     * id (makes the value accessible as keyname, e.g. in the make entry)
+#     * label (label shown in the GUI)
+#     * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
+#     * default
+parameters:
+parameters:
+- id: samp_rate
+  label: Sample rate
+  dtype: real
+- id: signal
+  label: Signal No
+  dtype: int
+  default: 0
+- id: min_items
+  label: Min input items
+  dtype: int
+  default: 7000
+- id: alpha
+  label: FFT lengths
+  dtype: int_vector
+  default: [16, 32, 64, 128, 256, 512, 1024]
+- id: beta
+  label: CP lengths
+  dtype: int_vector
+  default: [4, 8, 16, 32]
+  
+inputs:
+- label: in
+  domain: stream
+  dtype: complex
+- label: in_ED
+  domain: message
+
+outputs:
+- label: ofdm_out
+  domain: message
+
+#  'file_format' specifies the version of the GRC yml format used in the file
+#  and should usually not be changed.
+file_format: 1
