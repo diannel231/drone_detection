@@ -1,0 +1,6 @@
+/*!
+ * \defgroup block GNU Radio OFDM_ESTIMATOR C++ Signal Processing Blocks
+ * \brief All C++ blocks that can be used from the OFDM_ESTIMATOR GNU Radio
+ *        module are listed here or in the subcategories below.
+ *
+ */
