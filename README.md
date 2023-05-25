@@ -10,7 +10,7 @@ The following are the modules and blocks contained in the module:
 
 OFDM_Estimator is written using C++. Energy_Detector and Drone_ML is written in 
 
-*Note: Energy_Detector_V2 is simply the same block as Energy_Detector but it contains prints to output signal presence.
+*Note: Energy_Detector_V2 is simply the same block as Energy_Detector but it contains prints to output signal presence.*
 
 ## Installation
 
@@ -28,7 +28,7 @@ $ cd gr-module_name
 $ gr_modtool add block_name
 ```
 
-In the gr folder, either add the blocks and copy the code from the lib (C++) or python folder and yaml from the grc folder, or replace all folders with the ones from this repository. The modules were created and installed in the main Kali home directory.
+In the gr folder, either add the blocks and copy the main code from the lib (C++) or python folder and yaml from the grc folder, or replace all folders with the ones from this repository. The modules were created and installed in the main Kali home directory.
 
 After the files have been replaced, run the following commands in the gr-Energy_Detector_ff folder:
 ```
