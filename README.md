@@ -15,11 +15,12 @@ OFDM_Estimator is written using C++. Energy_Detector and Drone_ML is written in
 ## Installation
 
 The following are used to run the Energy Detector and OFDM Estimator Blocks:
-- Virtual Box: https://www.virtualbox.org/wiki/Downloads
-- Kali VM: https://www.kali.org/get-kali/#kali-virtual-machines
+- Kali Linux: https://www.kali.org/
 - GNU Radio 3.10: https://wiki.gnuradio.org/index.php/InstallingGR
 - gr-osmosdr: https://osmocom.org/projects/gr-osmosdr/wiki/GrOsmoSDR
 - HackRF: https://www.kali.org/tools/hackrf/
+
+*Note: It is highly recommended to install and use the blocks in a native Linux environment to ensure no latency issues between the HackRF and the signal processing blocks.*
 
 Install the blocks with the following shell commands:
 ```
