@@ -48,8 +48,6 @@ class ml_testing(gr.sync_block):
             out_sig=None)
             
         self.file = fname
-        
-        #print("name is: ", self.file)
             
         self.sub_space = ''
         self.sym_time = ''
@@ -58,23 +56,12 @@ class ml_testing(gr.sync_block):
         self.sig_avg = ''
         self.thresh = ''
         
-        #self.data_row = ()
-        
         self.selectPortName = 'ofdm_in'
         self.message_port_register_in(pmt.intern(self.selectPortName))
         self.set_msg_handler(pmt.intern(self.selectPortName), self.handle_msg)
         
-        # create ml frame/hold data
-        
-        
-
-            
     def handle_msg(self, msg):
     
-        #print(type(pmt.tuple_ref(msg, 0)))
-        
-        # ml frame/data = ""
-        
         # push data below to frame
     
         self.sub_space = str(pmt.tuple_ref(pmt.tuple_ref(msg, 0), 1))
@@ -83,21 +70,6 @@ class ml_testing(gr.sync_block):
         self.cp_len = str(pmt.tuple_ref(pmt.tuple_ref(msg, 3), 1))
         self.sig_avg = str(pmt.tuple_ref(pmt.tuple_ref(msg, 4), 1))
         self.thresh = str(pmt.tuple_ref(pmt.tuple_ref(msg, 5), 1))
-        
-
-        
-        #self.data_row = msg
-        
-        #print("row starts here")
-        
-        #print(self.sub_space)
-        #print(self.sig_avg)
-        
-        #print(self.data_row)
-        
-        #print("row ends here")
-        
-        # ml magic happens here
         
         # loading model and dataframe
         loaded_model = pickle.load(open(self.file, 'rb'))
