@@ -140,11 +140,6 @@ void OFDM_Estimator_impl::resize_fft(int size)
 pmt::pmt_t OFDM_Estimator_impl::pack_message(float subc, float time, int fft, int cp,
 					  double sig_avg, double threshold)
 {
-    //pmt::pmt_t identifier =
-    //    pmt::make_tuple(pmt::string_to_symbol("Signal"), pmt::from_uint64(d_signal));
-
-    // pmt::pmt_t info = pmt::make_tuple(pmt::string_to_symbol("OFDM"), pmt::from_float(1));
-
     pmt::pmt_t subcarr =
         pmt::make_tuple(pmt::string_to_symbol("Subc. space"), pmt::from_float(subc));
 
@@ -162,9 +157,6 @@ pmt::pmt_t OFDM_Estimator_impl::pack_message(float subc, float time, int fft, in
 
     pmt::pmt_t thres =
     	pmt::make_tuple(pmt::string_to_symbol("Threshold"), pmt::from_double(threshold));
-
-    //pmt::pmt_t msg =
-    //    pmt::make_tuple(identifier, info, subcarr, symtime, fftsize, cyclpre);
 
     pmt::pmt_t msg = pmt::make_tuple(subcarr, symtime, fftsize, cyclpre, sigAvg, thres);
 
@@ -224,8 +216,6 @@ int OFDM_Estimator_impl::work(int noutput_items,
     // calculate subcarr spacing and symbol time and pub message
     float subspc = d_samp_rate / a;
     float symtime = 1 / subspc;
-    
-    //pmt::pmt_t msg = pack_message(subspc, symtime, a, b);
     
     pmt::pmt_t msg = pack_message(subspc, symtime, a, b, d_signalAvg, d_Threshold);
     
