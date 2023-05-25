@@ -1,5 +1,5 @@
 # Drone Detection
-This repository contains the blocks used in GNU Radio used for drone detection and classification. The OFDM and Energy code is adapted from [Radio Frequency Toolbox](https://digitalcommons.odu.edu/ece_etds/160/) and [gr-inspector](https://github.com/gnuradio/gr-inspector).
+This repository contains the blocks used in GNU Radio used for drone detection and classification. The OFDM and Energy code is adapted from [Radio Frequency Toolbox for Drone Detection](https://digitalcommons.odu.edu/ece_etds/160/) and [gr-inspector](https://github.com/gnuradio/gr-inspector).
 
 ## Modules and Blocks
 
