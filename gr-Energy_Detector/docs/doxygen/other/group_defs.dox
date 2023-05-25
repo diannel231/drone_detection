@@ -1,0 +1,6 @@
+/*!
+ * \defgroup block GNU Radio ENERGY_DETECTOR C++ Signal Processing Blocks
+ * \brief All C++ blocks that can be used from the ENERGY_DETECTOR GNU Radio
+ *        module are listed here or in the subcategories below.
+ *
+ */
